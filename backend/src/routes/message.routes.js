@@ -3,9 +3,9 @@ import express from "express"
 const Router = express.Router()
 
 Router.get("/message", (req,res)=>{
-    res.send("hello")
+    res.send("message")
 })
 
-export default MessageChat
+export default Router
 
 
