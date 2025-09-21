@@ -11,4 +11,4 @@ router.get("/Logout", (req, res) => {
 });
 
 // This is important: default export
-export default router;
+export default auth;    
