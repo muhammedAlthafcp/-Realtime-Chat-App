@@ -9,11 +9,17 @@ export const signup = async (req, res) => {
 
     // Check password length
     if (Password.length < 6) {
-      return res.status(400).json({ message: "Password must be at least 6 characters long" });
+      return res.status(400).json({ message: "Password must be at least 6 characters" });
     }
 
-    // TODO: Add logic to save user to DB
-    res.status(201).json({ message: "User registered successfully" });
+    // Check if email is valid: regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(Email)) {
+      return res.status(400).json({ message: "Invalid email format" });
+    }
+
+    // ✅ If everything is fine
+    res.status(201).json({ message: "Validation passed. User can be created." });
 
   } catch (error) {
     console.error(error);
