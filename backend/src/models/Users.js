@@ -1,36 +1,37 @@
-import mongoose, { Types } from "mongoose";
+import mongoose from "mongoose";
 
-const Userschema = new mongoose.Schema(
-    {
-        Email:{
-            Type:String,
-            require:true,
-            unique:true
-        },
-         FullName:{
-            Type:String,
-            require:true,
-           
-        },
-         Password :{
-            Type:Number,
-            require:true,
-            minlength:5
-        },
-         Number:{
-            Type:Number,
-            require:true,
-            unique:true
-        },
-         Profilepic:{
-            Type:String,
-             default:""
-
-            
-    }}
+const UserSchema = new mongoose.Schema(
+  {
+    Email: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true, // removes extra spaces
+      lowercase: true, // normalize email
+    },
+    FullName: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    Password: {
+      type: String,
+      required: true,
+      minlength: 6, // better security
+    },
+    Number: {
+      type: Number,
+      required: true,
+      unique: true,
+    },
+    ProfilePic: {
+      type: String,
+      default: "",
+    },
+  },
+  { timestamps: true } // auto adds createdAt & updatedAt
 );
 
+const User = mongoose.model("User", UserSchema);
 
-const User = mongoose.model("User",Userschema)
-
-export default User
+export default User;

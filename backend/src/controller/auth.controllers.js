@@ -1,3 +1,6 @@
+import bcrypt from "bcrypt";
+import User from "../models/User.js"; // adjust path if needed
+
 export const signup = async (req, res) => {
   const { FullName, Email, Number, Password } = req.body;
 
@@ -12,14 +15,32 @@ export const signup = async (req, res) => {
       return res.status(400).json({ message: "Password must be at least 6 characters" });
     }
 
-    // Check if email is valid: regex
+    // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(Email)) {
       return res.status(400).json({ message: "Invalid email format" });
     }
 
-    // ✅ If everything is fine
-    res.status(201).json({ message: "Validation passed. User can be created." });
+    // Check if user already exists
+    const existingUser = await User.findOne({ Email });
+    if (existingUser) {
+      return res.status(409).json({ message: "User already exists" });
+    }
+
+    // Hash password
+    const hashedPassword = await bcrypt.hash(Password, 10);
+
+    // Create new user
+    const newUser = new User({
+      FullName,
+      Email,
+      Number,
+      Password: hashedPassword,
+    });
+
+    await newUser.save();
+
+    res.status(201).json({ message: "User created successfully", userId: newUser._id });
 
   } catch (error) {
     console.error(error);
