@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import authRoute from "./routes/auth.js"; // match your folder name
 import MessageChat from "./routes/message.routes.js";
+import DBconnection from "./lib/Connection.js";
 
 dotenv.config();
 
@@ -13,7 +14,10 @@ app.use("/api/auth", authRoute);
 app.use('/api/auth', MessageChat);
 
 
+app.use(express.json())
+
+
 app.listen(PORT, () => {
-  console.log(`Server is running `);
+  console.log(`Server is running `+ DBconnection());
 });
 
