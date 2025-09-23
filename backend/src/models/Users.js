@@ -6,8 +6,8 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
       unique: true,
-      trim: true, // removes extra spaces
-      lowercase: true, // normalize email
+      trim: true,
+      lowercase: true,
     },
     FullName: {
       type: String,
@@ -17,21 +17,23 @@ const UserSchema = new mongoose.Schema(
     Password: {
       type: String,
       required: true,
-      minlength: 6, // better security
+      minlength: 6,
     },
     Number: {
-      type: Number,
+      type: String,
       required: true,
       unique: true,
+      trim: true,
     },
     ProfilePic: {
       type: String,
       default: "",
     },
   },
-  { timestamps: true } // auto adds createdAt & updatedAt
+  { timestamps: true }
 );
 
-const User = mongoose.model("User", UserSchema);
+const User = mongoose.model("Users", UserSchema);
 
 export default User;
+
