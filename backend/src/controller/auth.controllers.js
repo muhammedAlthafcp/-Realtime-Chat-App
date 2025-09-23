@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt";
 import User from "../models/User.js"; // adjust path if needed
+import { generateToken } from "../lib/utils.js";
 
 export const signup = async (req, res) => {
   const { FullName, Email, Number, Password } = req.body;
@@ -37,10 +38,20 @@ export const signup = async (req, res) => {
       Number,
       Password: hashedPassword,
     });
+    if(newUser){
+        generateToken(newUser._id)
+            await newUser.save()
+        
+    }
 
-    await newUser.save();
-
-    res.status(201).json({ message: "User created successfully", userId: newUser._id });
+    res.status(201).json({
+      message: "User created successfully",
+      user: {
+        _id: newUser._id,
+        FullName: newUser.FullName,
+        Email: newUser.Email,
+      },
+    });
 
   } catch (error) {
     console.error(error);
