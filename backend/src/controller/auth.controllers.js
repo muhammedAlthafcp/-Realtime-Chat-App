@@ -52,9 +52,7 @@ export const signup = async (req, res) => {
         FullName: newUser.FullName,
         Email: newUser.Email,
       },
-    });
-
-
+    }); 
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server error" });
