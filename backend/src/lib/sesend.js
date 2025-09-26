@@ -1,11 +1,12 @@
-import resend from "resend"
-import dotenv, { config } from "dotenv"
-dotenv.config()
+import { Resend } from "resend";
+import dotenv from "dotenv";
 
-export const resendclient = new resend(process.env.RESEND)
+dotenv.config();
+
+export const resendclient = new Resend(process.env.RESEND_API_KEY);
 
 export const sender = {
-    email: process.env.EMAIL_FROM,
-    name: process.env.EMAIL_FROM_NAME
-
+  email: process.env.EMAIL_FROM,       // e.g. no-reply@yourdomain.com (must be verified in Resend)
+  name: process.env.EMAIL_FROM_NAME,  // e.g. "MACP Chat"
 };
+

@@ -5,7 +5,7 @@ const UserSchema = new mongoose.Schema(
     Email: {
       type: String,
       required: true,
-      unique: true,
+      unique: true, // ✅ only email is unique
       trim: true,
       lowercase: true,
     },
@@ -22,7 +22,6 @@ const UserSchema = new mongoose.Schema(
     Number: {
       type: String,
       required: true,
-      unique: true,
       trim: true,
     },
     ProfilePic: {
@@ -36,4 +35,3 @@ const UserSchema = new mongoose.Schema(
 const User = mongoose.model("Users", UserSchema);
 
 export default User;
-
