@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-   "dev": "nodemon src/server.js",
-   "start": "node src/server.js"
-   
-  
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
   },
   "author": "",
   "type": "module",
@@ -19,6 +17,7 @@
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.18.1",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "resend": "^6.0.0"
   }
 }
