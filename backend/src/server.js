@@ -1,15 +1,18 @@
 import express from "express";
 import dotenv from "dotenv";
+import cookie from "cookie-parser"
+
 import authRoute from "./routes/auth.js";
 import MessageChat from "./routes/messages.js";
 import DBconnection from "./lib/Connection.js";
-
+import cookieParser from "cookie-parser";
 dotenv.config();
 
 const app = express();
 
 // Middleware
 app.use(express.json());
+app.use(cookieParser())
 
 // DB connection
 DBconnection();
