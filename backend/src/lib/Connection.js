@@ -11,10 +11,6 @@ const DBconnection = async () => {
     console.error("❌ MongoDB connection error:", error);
   }
 };
-
-
-
-
 export default DBconnection;
 
 
