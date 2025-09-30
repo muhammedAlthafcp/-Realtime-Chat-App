@@ -56,7 +56,7 @@ export const signup = async (req, res) => {
       user: {
         _id: newUser._id,
         FullName: newUser.FullName,
-        Email: newUser.Email,
+        Email: newUser.Email, 
       },
     });
 
