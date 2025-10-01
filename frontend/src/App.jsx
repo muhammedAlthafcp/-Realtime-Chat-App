@@ -7,8 +7,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ChatPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<signUpPage />} />
-
+        <Route path="/signup" element={<signUpPage />} /
       </Routes>
     </div>
   );
