@@ -1,13 +1,17 @@
-import React from 'react'
+import { Routes, Route } from "react-router-dom";
+import ChatPage from "./pages/ChatPage"; // import your page component
 
 function App() {
   return (
     <div>
-       <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+      <Routes>
+        <Route path="/" element={<ChatPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<signUpPage />} />
+
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
