@@ -26,7 +26,7 @@ export default function ChatPage() {
 
   return (
     <div className="relative min-h-screen flex flex-col md:flex-row overflow-hidden text-white">
-      {/* 🔥 Background */}
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-800 via-slate-900 to-blue-900" />
       <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-pink-500/20 blur-[160px]" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-cyan-500/20 blur-[160px]" />
@@ -34,7 +34,6 @@ export default function ChatPage() {
       {/* Left Sidebar */}
       {(!activeChat || !isMobile) && (
         <div className="relative z-10 md:w-[300px] w-full md:h-screen h-auto p-4 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl flex flex-col">
-          {/* Top: Title + Plus Button */}
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-white font-bold text-xl">Macp</h2>
             <button className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30">
@@ -45,12 +44,7 @@ export default function ChatPage() {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 4v16m8-8H4"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
               </svg>
             </button>
           </div>
@@ -61,21 +55,17 @@ export default function ChatPage() {
             className="w-full mb-3 px-4 py-2 rounded-xl bg-white/20 text-white placeholder-white/70 focus:outline-none"
           />
 
-          {/* Tabs: Chats / Groups */}
+          {/* Tabs */}
           <div className="flex space-x-2 mb-4">
             <button
               onClick={() => setActiveTab("Chats")}
-              className={`flex-1 py-2 rounded-xl ${
-                activeTab === "Chats" ? "bg-white/20" : "bg-white/10"
-              } text-white hover:bg-white/30`}
+              className={`flex-1 py-2 rounded-xl ${activeTab === "Chats" ? "bg-white/20" : "bg-white/10"} text-white hover:bg-white/30`}
             >
               Chats
             </button>
             <button
               onClick={() => setActiveTab("Groups")}
-              className={`flex-1 py-2 rounded-xl ${
-                activeTab === "Groups" ? "bg-white/20" : "bg-white/10"
-              } text-white hover:bg-white/30`}
+              className={`flex-1 py-2 rounded-xl ${activeTab === "Groups" ? "bg-white/20" : "bg-white/10"} text-white hover:bg-white/30`}
             >
               Groups
             </button>
@@ -126,16 +116,12 @@ export default function ChatPage() {
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M15 19l-7-7 7-7"
-                        />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                       </svg>
                     </button>
                   )}
 
+                  {/* Profile */}
                   <div className="w-12 h-12 rounded-full bg-white/30 flex items-center justify-center font-bold text-slate-900">
                     {activeChat.name[0]}
                   </div>
