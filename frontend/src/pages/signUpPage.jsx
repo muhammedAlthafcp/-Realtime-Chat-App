@@ -45,7 +45,6 @@ export default function SignUpPage() {
         <button className="w-full py-3 sm:py-4 rounded-2xl bg-blue-500/50 hover:bg-blue-500/70 text-white font-bold text-sm sm:text-base md:text-lg transition mb-4 sm:mb-6">
           Sign Up
         </button>
-
         {/* Footer */}
         <div className="text-center text-xs sm:text-sm md:text-base text-white">
           Already have an account?{" "}
