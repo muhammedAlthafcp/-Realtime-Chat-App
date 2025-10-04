@@ -40,7 +40,6 @@ export default function SignUpPage() {
           placeholder="Confirm Password"
           className="mb-6 sm:mb-8 px-4 sm:px-6 py-3 sm:py-4 rounded-2xl bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base md:text-lg w-full"
         />
-
         {/* Sign Up Button */}
         <button className="w-full py-3 sm:py-4 rounded-2xl bg-blue-500/50 hover:bg-blue-500/70 text-white font-bold text-sm sm:text-base md:text-lg transition mb-4 sm:mb-6">
           Sign Up
