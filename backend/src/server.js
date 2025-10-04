@@ -6,12 +6,14 @@ import authRoute from "./routes/auth.js";
 import MessageChat from "./routes/messages.js";
 import DBconnection from "./lib/Connection.js";
 import cookieParser from "cookie-parser";
+import cors from "cors"
 dotenv.config();
 
 const app = express();
 
 // Middleware
 app.use(express.json());
+app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 app.use(cookieParser())
 
 // DB connection
