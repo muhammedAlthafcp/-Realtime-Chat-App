@@ -4,6 +4,7 @@ import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import useAuthStore from "./store/useAuthstore.js";
 import { useEffect } from "react";
+import { Toaster, toast } from "react-hot-toast";
 
 function App() {
   const { checkAuth, isCheckingAuth, authUser } = useAuthStore();
@@ -34,6 +35,8 @@ function App() {
           <Route path="/signup" element={!authUser ? <SignUpPage /> : <Navigate to="/" />} />
         </Routes>
       </div>
+            <Toaster />
+
     </div>
   );
 }
