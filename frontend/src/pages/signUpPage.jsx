@@ -15,6 +15,7 @@ export default function SignUpPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     signup(formData);
