@@ -15,12 +15,13 @@ export default function SignUpPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     signup(formData);
   };
 
+  
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center text-white">
       {/* 🔥 Background */}
