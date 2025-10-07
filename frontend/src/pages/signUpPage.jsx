@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useAuthStore from "../store/useAuthStore"; // ✅ Add this line
+import useAuthStore from "../store/useAuthstore"; // ✅ Add this line
 
 export default function SignUpPage() {
   const [formData, setFormData] = useState({
