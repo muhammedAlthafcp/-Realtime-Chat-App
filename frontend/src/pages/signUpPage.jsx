@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useAuthStore from "../store/useAuthStore"; // ✅ Add this line
 
 export default function SignUpPage() {
   const [formData, setFormData] = useState({
@@ -35,7 +36,6 @@ export default function SignUpPage() {
           Create Account
         </h2>
 
-        {/* Full Name */}
         <input
           type="text"
           name="fullName"
@@ -45,7 +45,6 @@ export default function SignUpPage() {
           className="mb-4 sm:mb-6 px-4 sm:px-6 py-3 sm:py-4 rounded-2xl bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base md:text-lg w-full"
         />
 
-        {/* Email */}
         <input
           type="email"
           name="email"
@@ -55,7 +54,6 @@ export default function SignUpPage() {
           className="mb-4 sm:mb-6 px-4 sm:px-6 py-3 sm:py-4 rounded-2xl bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base md:text-lg w-full"
         />
 
-        {/* Number */}
         <input
           type="number"
           name="number"
@@ -65,7 +63,6 @@ export default function SignUpPage() {
           className="mb-4 sm:mb-6 px-4 sm:px-6 py-3 sm:py-4 rounded-2xl bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base md:text-lg w-full"
         />
 
-        {/* Password */}
         <input
           type="password"
           name="password"
@@ -75,7 +72,6 @@ export default function SignUpPage() {
           className="mb-6 sm:mb-8 px-4 sm:px-6 py-3 sm:py-4 rounded-2xl bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base md:text-lg w-full"
         />
 
-        {/* Sign Up Button */}
         <button
           type="submit"
           disabled={isSigningUp}
