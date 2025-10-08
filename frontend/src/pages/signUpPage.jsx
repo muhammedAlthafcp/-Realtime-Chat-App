@@ -1,12 +1,12 @@
 import { useState } from "react";
-import useAuthStore from "../store/useAuthstore"; // ✅ Add this line
+import useAuthStore from "../store/useAuthstore";
 
 export default function SignUpPage() {
   const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    number: "",
-    password: "",
+    FullName: "",
+    Email: "",
+    Number: "",
+    Password: "",
   });
 
   const { signup, isSigningUp } = useAuthStore();
@@ -15,13 +15,11 @@ export default function SignUpPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    signup(formData);
+    signup(formData); // ✅ sends keys exactly as backend expects
   };
 
-  
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center text-white">
       {/* 🔥 Background */}
@@ -38,42 +36,47 @@ export default function SignUpPage() {
           Create Account
         </h2>
 
+        {/* Full Name */}
         <input
           type="text"
-          name="fullName"
+          name="FullName"
           placeholder="Full Name"
-          value={formData.fullName}
+          value={formData.FullName}
           onChange={handleChange}
           className="mb-4 sm:mb-6 px-4 sm:px-6 py-3 sm:py-4 rounded-2xl bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base md:text-lg w-full"
         />
 
+        {/* Email */}
         <input
           type="email"
-          name="email"
+          name="Email"
           placeholder="Email"
-          value={formData.email}
+          value={formData.Email}
           onChange={handleChange}
           className="mb-4 sm:mb-6 px-4 sm:px-6 py-3 sm:py-4 rounded-2xl bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base md:text-lg w-full"
         />
 
+        {/* Number */}
         <input
           type="number"
-          name="number"
+          name="Number"
           placeholder="Number"
-          value={formData.number}
+          value={formData.Number}
           onChange={handleChange}
           className="mb-4 sm:mb-6 px-4 sm:px-6 py-3 sm:py-4 rounded-2xl bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base md:text-lg w-full"
         />
 
+        {/* Password */}
         <input
           type="password"
-          name="password"
+          name="Password"
           placeholder="Password"
-          value={formData.password}
+          value={formData.Password}
           onChange={handleChange}
           className="mb-6 sm:mb-8 px-4 sm:px-6 py-3 sm:py-4 rounded-2xl bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base md:text-lg w-full"
         />
 
+        {/* Sign Up Button */}
         <button
           type="submit"
           disabled={isSigningUp}
@@ -90,3 +93,5 @@ export default function SignUpPage() {
     </div>
   );
 }
+
+
