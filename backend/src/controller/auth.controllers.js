@@ -8,8 +8,6 @@ dotenv.config();
 
 export const signup = async (req, res) => { 
   const { FullName, Email, Number, Password } = req.body;
-    console.log(req.body); // 👈 check what frontend sends
-
 
   try {
     // Validate required fields
