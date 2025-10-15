@@ -14,8 +14,6 @@ export const protectRouter = async (req, res, next) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded;
 
-
-
     next();
   } catch (error) {
     console.error("Auth middleware error:", error.message);
